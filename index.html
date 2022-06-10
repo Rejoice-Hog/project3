@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>assignment</title>
+  </head>
+  <body>
+    <p class="top">Our menu</p>
+    <p id="menuItem" class="menuItem"></p>
+    <div class="ratty">
+    <select name="menuField" id="menuField" class="menuField">
+      <option value="fufu">Fufu and light soup</option>
+      <option value="banku">Banku and okro</option>
+      <option value="rice">Rice and Stew</option>
+      <option value="akple">Akple and pepper</option>
+    </select>
+    <input type="submit" value="submit" id="menusubmit" />
+    <div class="mose">
+    <p id="userselection"></p>
+    <p id="ingredient"></p>
+  </div>
+  </div>
+    <script>
+      let item1 = "fufu and light soup";
+      let item2 = "banku and okro";
+      let item3 = "rice and stew";
+      let item4 = "akple and pepper";
+
+      let ingredient1 = "cassava,meat,plantain,";
+      let ingredient2 = "corn dough,cassava dough";
+      let ingredient3 = "rice";
+      let ingredient4 = "corn flour";
+
+      document.getElementById("menuItem").innerHTML ="Choose preferred food";
+
+        const menusumbit = document.querySelector(".menusubmit");
+        const menuField = document.querySelector(".menuField");
+        
+      
+
+      function checkmenu() {
+        const menuvalue = menuField.value;
+
+        if (menuvalue == "fufu") {
+          document.getElementById("userselection").innerHTML =
+            "You have selected " + item1;
+          document.getElementById("ingredient").innerHTML =
+            "The ingredients are : " + ingredient1;
+        }
+        else if(menuvalue=="banku"){
+          document.getElementById("userselection").innerHTML="You have selected "+ item2;
+          document.getElementById("ingredient").innerHTML="The ingredient are: "+ ingredient2;
+        }
+
+        else if(menuvalue=="rice"){
+          document.getElementById("userselection").innerHTML="You have selected "+ item3;
+          document.getElementById("ingredient").innerHTML="The ingredient are: "+ ingredient3
+        }
+        
+        else if(menuvalue=="akple"){
+          document.getElementById("userselection").innerHTML="You have selected " +item4
+          document.getElementById("ingredient").innerHTML="The ingredient are: " +ingredient4
+        } 
+        else{
+          document.write("You have not selected any food");
+        } 
+        }
+      menusubmit.addEventListener("click",checkmenu);
+    </script>
+  </body>
+</html>
